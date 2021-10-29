@@ -3,5 +3,5 @@ Collection of reusable wrappers that allow to quickly use popular command line t
 
 download specific directories from github repos:
 
-```curl https://codeload.github.com/snakemake/snakemake-wrappers/tar.gz/master | \
+```curl https://codeload.github.com/snakemake/snakemake-wrappers/tar.gz/master | 
   tar -xz --strip=2 snakemake-wrappers-master/bio/reference```
