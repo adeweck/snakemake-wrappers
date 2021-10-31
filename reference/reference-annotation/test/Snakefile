@@ -1,0 +1,13 @@
+rule get_annotation:
+    output:
+        "refs/annotation.gtf"
+    params:
+        species="homo_sapiens", #additional modification might be necessary beyond human and mouse
+        release="38",
+        source="gencode", # options: ensembl|gencode
+    log:
+        "logs/get_annotation.log"
+    cache: True  # save space and time with between workflow caching (see docs)
+    wrapper:
+        "https://github.com/adeweck/snakemake-wrappers/raw/main/reference/reference-annotation"
+        #"master/bio/reference/reference-annotation"

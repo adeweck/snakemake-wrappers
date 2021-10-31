@@ -1,0 +1,4 @@
+name: reference-annotation
+description: Download annotation of genomic sites (e.g. transcripts) from ENSEMBL or GENCODE FTP servers, and store them in a single .gtf or .gff3 file with or without compression.
+authors:
+  - Antoine de Weck
