@@ -1,7 +1,7 @@
 __author__ = "Johannes Köster"
 __copyright__ = "Copyright 2019, Johannes Köster"
 __email__ = "johannes.koester@uni-due.de"
-__license__ = "MIT"
+__license__ = "BSD3"
 
 
 import subprocess
@@ -40,12 +40,15 @@ if source == "gencode":
     species_dict = {"homosapiens":"human",
                     "musmusculus":"mouse"}
     species = species_dict.get(species,species)
+    release = f"M{release}" if species == "mouse" else release
     url = f"ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_{species}/release_{release}/gencode.v{release}.{flavor}annotation.{fmt}.gz"
     
 elif source == "ensembl":
     
     species_dict = {"homosapiens":"homo_sapiense",
-                    "musmusculus":"mus_musculus"}
+                    "human":"homo_sapiens",
+                    "musmusculus":"mus_musculus",
+                    "mouse":"mus_musculus"}
     species = species_dict.get(species,species)
     species_cap=species.capitalize()
     

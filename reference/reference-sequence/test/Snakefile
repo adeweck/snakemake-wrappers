@@ -1,0 +1,13 @@
+rule get_fasta:
+    output:
+        "refs/genome.fasta"
+    params:
+        species="homo_sapiens",
+        datatype="dna",
+        release="98"
+    log:
+        "logs/get_genome.log"
+    cache: True  # save space and time with between workflow caching (see docs)
+    wrapper:
+        "file://~/research/repos/snakemake-wrappers/reference/reference-sequence"
+        #"https://github.com/adeweck/snakemake-wrappers/raw/main/reference/reference-sequence"
