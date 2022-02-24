@@ -98,7 +98,7 @@ for build_version in range(build_version_start,build_version_start+5):
 
 if not success:
     print(
-        "Unable to download requested sequence data from Ensembl. "
+        f"Unable to download requested sequence data from {source}. "
         "Did you check that this combination of species, build, and release is actually provided?",
         file=sys.stderr,
     )
