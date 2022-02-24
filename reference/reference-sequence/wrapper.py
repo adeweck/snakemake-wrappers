@@ -88,7 +88,7 @@ for build_version in range(build_version_start,build_version_start+5):
     url = url0.format(build_version=build_version)
 
     try:
-        shell("curl -sSf {url} > /dev/null 2> /dev/null")
+        shell("curl -sSIf {url} > /dev/null 2> /dev/null")
     except sp.CalledProcessError:
         continue
 
