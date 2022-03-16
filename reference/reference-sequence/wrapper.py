@@ -35,7 +35,7 @@ if source == "gencode":
     species = species_dict.get(species,species)
     release = f"M{release}" if species == "mouse" else release
     
-    url_root = f"ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_{species}/release_{release}"
+    url_root = f"https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_{species}/release_{release}"
     
     if datatype == "dna":
         filename = f"GRC{species[0]}{{build_version}}.primary_assembly.genome.fa.gz"
@@ -61,7 +61,7 @@ elif source == "ensembl":
     species = species_dict.get(species,species)
     species_cap=species.capitalize()
     
-    url_root = f"ftp://ftp.ensembl.org/pub/release-{release}/fasta/{species}/{datatype}"
+    url_root = f"https://ftp.ensembl.org/pub/release-{release}/fasta/{species}/{datatype}"
     filename_root = f"{species_cap}.GRC{species[0]}{{build_version}}"
     if datatype == "dna":
         filename = f"{filename_root}.dna.primary_assembly.fa.gz"

@@ -41,7 +41,7 @@ if source == "gencode":
                     "musmusculus":"mouse"}
     species = species_dict.get(species,species)
     release = f"M{release}" if species == "mouse" else release
-    url = f"ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_{species}/release_{release}/gencode.v{release}.{flavor}annotation.{fmt}.gz"
+    url = f"https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_{species}/release_{release}/gencode.v{release}.{flavor}annotation.{fmt}.gz"
     
 elif source == "ensembl":
     
@@ -55,7 +55,7 @@ elif source == "ensembl":
     if build == "":
         # check if file exists
         build_core = "GRC{}".format(species[0])
-        url_tmp = f"ftp://ftp.ensembl.org/pub/release-{release}/{fmt}/{species}/{species_cap}.{build_core}{{build_version}}.{release}.{flavor}{fmt}.gz"
+        url_tmp = f"https://ftp.ensembl.org/pub/release-{release}/{fmt}/{species}/{species_cap}.{build_core}{{build_version}}.{release}.{flavor}{fmt}.gz"
         build_version = 38 if release > 75 else 37
         nomatch = True
         iter = 0
@@ -68,7 +68,7 @@ elif source == "ensembl":
             except:
                 nomatch = True
     else:
-        url = f"ftp://ftp.ensembl.org/pub/release-{release}/{fmt}/{species}/{species_cap}.{build}.{release}.{flavor}{fmt}.gz"
+        url = f"https://ftp.ensembl.org/pub/release-{release}/{fmt}/{species}/{species_cap}.{build}.{release}.{flavor}{fmt}.gz"
     
     
 log = snakemake.log_fmt_shell(stdout=False, stderr=True)
